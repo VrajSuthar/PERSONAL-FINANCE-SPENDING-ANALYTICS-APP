@@ -16,23 +16,20 @@ import 'package:hive_flutter/hive_flutter.dart';
 /// touching the others.
 Future<void> bootstrap(Widget Function() builder) async {
   //*==== Zone catches async errors that escape Flutter's own handlers ====*/
-  await runZonedGuarded(
-    () async {
-      WidgetsFlutterBinding.ensureInitialized();
+  await runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
 
-      _initErrorHandling();
-      await _initSystemChrome();
-      await _initStorage();
+    _initErrorHandling();
+    await _initSystemChrome();
+    await _initStorage();
 
-      final container = ProviderContainer();
-      _initNetwork(container);
+    final container = ProviderContainer();
+    _initNetwork(container);
 
-      await _loadInitialData(container);
+    await _loadInitialData(container);
 
-      runApp(UncontrolledProviderScope(container: container, child: builder()));
-    },
-    (error, stack) => _reportError(error, stack),
-  );
+    runApp(UncontrolledProviderScope(container: container, child: builder()));
+  }, (error, stack) => _reportError(error, stack));
 }
 
 //*========================================== Steps ==========================================*/
