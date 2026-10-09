@@ -1,4 +1,3 @@
-import 'package:finance_app/shared/widgets/common_text.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -6,6 +5,8 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: CommonText("Login Screen", fontSize: 16)));
+    final theme = Theme.of(context);
+
+    return Scaffold(backgroundColor: theme.scaffoldBackgroundColor);
   }
 }

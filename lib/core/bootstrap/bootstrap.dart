@@ -1,3 +1,4 @@
+import 'package:finance_app/core/constants/app_const.dart';
 import 'dart:async';
 
 import 'package:finance_app/core/network/api_client.dart';
@@ -54,7 +55,8 @@ Future<void> _initStorage() async {
   await Hive.initFlutter();
 
   //*==== Open boxes needed synchronously by the first screen here ====*/
-  await Hive.openBox<dynamic>('auth_box');
+  await Hive.openBox<dynamic>(AppConst.authBox);
+  await Hive.openBox<dynamic>(AppConst.settingsBox);
 }
 
 void _initNetwork(ProviderContainer container) {

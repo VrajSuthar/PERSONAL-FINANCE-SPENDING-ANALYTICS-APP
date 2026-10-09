@@ -1,3 +1,4 @@
+import 'package:finance_app/core/constants/app_const.dart';
 import 'dart:async';
 
 import 'package:dio/dio.dart';
@@ -13,7 +14,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 class TokenStorage {
   const TokenStorage._();
 
-  static const String _boxName = 'auth_box';
+  static const String _boxName = AppConst.authBox;
   static const String _accessKey = 'accessToken';
   static const String _refreshKey = 'refreshToken';
 

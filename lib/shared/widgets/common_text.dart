@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-/// A Google Fonts factory such as `GoogleFonts.poppins` or `GoogleFonts.inter`.
+/// A Google Fonts factory such as `GoogleFonts.poppins` or `GoogleFonts.geist`.
 typedef GoogleFontBuilder = TextStyle Function({TextStyle? textStyle});
 
 /// The app's one text widget.
@@ -14,7 +14,7 @@ typedef GoogleFontBuilder = TextStyle Function({TextStyle? textStyle});
 /// CommonText('Balance', googleFont: GoogleFonts.poppins, fontSize: 18, fontWeight: FontWeight.w600)
 /// ```
 ///
-/// Inter is the default font. Set [CommonText.defaultGoogleFont] once (e.g. in
+/// geist is the default font. Set [CommonText.defaultGoogleFont] once (e.g. in
 /// `main`) to change it app-wide; a per-widget [googleFont] overrides it.
 class CommonText extends StatelessWidget {
   const CommonText(
@@ -49,7 +49,7 @@ class CommonText extends StatelessWidget {
   });
 
   /// Font used by every [CommonText] that doesn't pass its own [googleFont].
-  static GoogleFontBuilder? defaultGoogleFont = GoogleFonts.inter;
+  static GoogleFontBuilder? defaultGoogleFont = GoogleFonts.geist;
 
   final String text;
 
